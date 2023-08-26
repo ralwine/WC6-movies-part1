@@ -1,7 +1,7 @@
 WC6 - PART 1: MOVIE SAGAS APP 
 React-Redux with Redux-Sagas
 
--ROUGH OUTLINE_
+-ROUGH OUTLINE-
 
 Initializing:
     - Set up DB [x]
@@ -33,6 +33,8 @@ Base things:
             - reducer/saga/store []
             - render []
     
+    Let's test this premise first: 'Remember `req.params` and `:id`?'[]
+    
     - Here comes the really tough part, will need more than one in certain cases.
     Will need from genres DB:
         name
@@ -41,4 +43,6 @@ Base things:
                 - function/client []
             - reducer/saga/store []
             - render []
+
+    
         
