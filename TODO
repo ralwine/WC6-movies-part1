@@ -1,2 +1,44 @@
 WC6 - PART 1: MOVIE SAGAS APP 
 React-Redux with Redux-Sagas
+
+-ROUGH OUTLINE_
+
+Initializing:
+    - Set up DB [x]
+    - Install dependencies and hook in where needed [x]
+    - Check files for other necessary hooks and call in where needed [x]
+
+Base things:
+    - First ('Home/List' or rather '/') page view is already complete, 
+    but we need to set up the second ('/details') and link to it. 
+    Refactor to make page with nothing but a page change button at this point. Hook in and utilize (useHistory) to move between screens [x]
+    - Set up to show individual movie data on details page when spcific 
+    movie poster is clicked. Will need from movies DB:
+        title
+            - GET 
+                - server []
+                - function/client []
+            - reducer/saga/store []
+            - render []
+        description
+            - GET 
+                - server []
+                - function/client []
+            - reducer/saga/store []
+            - render []
+        poster
+            - GET 
+                - server []
+                - function/client []
+            - reducer/saga/store []
+            - render []
+    
+    - Here comes the really tough part, will need more than one in certain cases.
+    Will need from genres DB:
+        name
+            - GET 
+                - server []
+                - function/client []
+            - reducer/saga/store []
+            - render []
+        
