@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 });
 
-// GET movie details by id
+// GET movie details by id..
 router.get('/:id', (req, res) => {
   const id = req.params.movieId;
   console.log('movieId: ', id);
