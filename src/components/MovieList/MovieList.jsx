@@ -10,11 +10,7 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
     const history = useHistory();
 
-    const changeScreen = () => {
-        console.log("changing screen")
-        // Use history.push to navigate to a new route
-        history.push('/details');
-    };
+    
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
