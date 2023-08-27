@@ -34,12 +34,12 @@ Base things:
             - render []
     
     Let's test this premise first: 'Remember `req.params` and `:id`?'[]
-    
+
     - Here comes the really tough part, will need more than one in certain cases.
     Will need from genres DB:
         name
             - GET 
-                - server []
+                - server [x]
                 - function/client []
             - reducer/saga/store []
             - render []
