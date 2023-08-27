@@ -14,7 +14,7 @@ export function MovieDetails() {
     history.push('/');
   };
 
-  console.log("in Movie Details", details)
+  console.log("in Movie Details", details) // where are my details?
 
   return (<>
     <section className="movies">

@@ -35,9 +35,11 @@ function* fetchAllMovies() {
 function* fetchDetails(action) {
     console.log("in fecthDetails")
     // getDeets
+    const movieId = action.payload;
+
     try {
-        const movies = yield axios.get(`/api/movie/${action.payload}`);
-        console.log('get all:', details.data);
+        const details = yield axios.get(`/api/movie/${movieId}`);
+        console.log('get id:', details.data);
         yield put({
             type: 'SET_DETAILS',
             payload: details.data

@@ -17,22 +17,23 @@ router.get('/', (req, res) => {
 });
 
 // GET movie details by id..
-router.get('/:id', (req, res) => {
-  const id = req.params.movieId;
-  console.log('movieId: ', id);
+router.get('/', (req, res) => {
+  const movieData = req.params.data;
+  console.log('req.params:', req.params);
 // Query params for movies DB... need where clause!
-  const queryParams = `
+  const queryText = `
       SELECT
         movies.id,
         movies.title,
         movies.poster,
         movies.description
-        FROM movies WHERE movies.id = $1`;
+        FROM movies
+        WHERE movies.id = $1, title = $2`;
 
-  pool.query(queryParams, [id])
+  pool.query(queryText, [movieData])
     .then(results => {
       console.log('server /:id GET working!', results);
-      res.send(results.rows);
+      res.send(results.rows[0]);
     })
     .catch(error => {
       console.log('error in server /:id GET', error);

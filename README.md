@@ -1,9 +1,7 @@
-# Project Name
+<h1>Saga @ the Movies (Weekend Challenge #5)</h1>
+An app for displaying movies from a database
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+In this application, we are meant to display movies from a database and when each individual 'poster' is clicked upon it should take us to a page displaying a brief description of the film as well as the genre, title and aforementioned poster image.
 
-## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
