@@ -6,7 +6,7 @@ export function MovieDetails() {
 
   const history = useHistory();
   const dispatch = useDispatch();
-  const movies = useSelector(store => store.movies);
+  const details = useSelector(store => store.details);
 
   const changeScreen = () => {
     console.log("changing screen")
@@ -14,17 +14,21 @@ export function MovieDetails() {
     history.push('/');
   };
 
+  console.log("in Movie Details", details)
+
   return (<>
     <section className="movies">
-      {movies.map(movie => {
-        return (
-          <>
-            {/* <div key={movie.id} >
-              <h3>{movie.title}</h3>
-              <img src={movie.poster} alt={movie.title} onClick={changeScreen} />
-            </div> */}
-          </>
-        );
+      {details.map(details => {
+
+        <>
+          <div key={details.id}>
+            
+            <img src={details.poster} alt={details.title} onClick={changeScreen} />
+            <p>{details.title}</p>
+            <p>{details.description}</p>
+          </div>
+        </>
+          ;
       })}
     </section>
     <div>
