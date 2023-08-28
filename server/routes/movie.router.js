@@ -28,7 +28,10 @@ router.get('/', (req, res) => {
         movies.poster,
         movies.description
         FROM movies
-        WHERE movies.id = $1, title = $2`;
+        WHERE movies.id = $1, 
+        movies.title = $2,
+        movies.poster = $3,
+        moives.description = $4`;
 
   pool.query(queryText, [movieData])
     .then(results => {
