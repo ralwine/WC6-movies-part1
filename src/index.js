@@ -45,14 +45,24 @@ function* fetchDetails(action) {
             type: 'SET_DETAILS',
             payload: details.data
         });
-     } catch {
+    } catch {
         console.log('error in fetchDetails/index');
     }
 }
 
 // let's get genres here
-function* fetchGenres(){
+function* fetchGenres() {
     console.log("in fetchGenres")
+    try {
+        const genres = yield axios.get('/api/genre')
+        console.log('get genres:', genres.data);
+        yield put({
+            type: 'SET_GENRES',
+            payload: genres.data
+        });
+    } catch {
+        console.log('get genres error');
+    }
 }
 
 // Create sagaMiddleware

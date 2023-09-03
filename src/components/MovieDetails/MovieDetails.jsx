@@ -7,6 +7,7 @@ export function MovieDetails() {
   const history = useHistory();
   const dispatch = useDispatch();
   const details = useSelector(store => store.details);
+  const genres = useSelector(store => store.genres);
 
   const changeScreen = () => {
     console.log("changing screen")
@@ -15,6 +16,7 @@ export function MovieDetails() {
   };
 
   console.log("in Movie Details", details) // where are my details?
+  console.log("in Movie Details/ genres", genres.data) // where are my genres?
 
   return (<>
     <section className="movies">
