@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DEETS', fetchDetails);
+    yield takeEvery('FETCH_GENRES', fetchGenres);
 }
 
 function* fetchAllMovies() {
@@ -47,6 +48,11 @@ function* fetchDetails(action) {
      } catch {
         console.log('error in fetchDetails/index');
     }
+}
+
+// let's get genres here
+function* fetchGenres(){
+    console.log("in fetchGenres")
 }
 
 // Create sagaMiddleware
