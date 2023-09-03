@@ -18,7 +18,7 @@ export function MovieDetails() {
 
   return (<>
     <section className="movies">
-      {details.map(details => {
+      
 
         <>
           <div key={details.id}>
@@ -29,7 +29,7 @@ export function MovieDetails() {
           </div>
         </>
           ;
-      })}
+      
     </section>
     <div>
       <button className='backToList' onClick={changeScreen}>BACK TO LIST</button>

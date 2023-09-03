@@ -11,11 +11,11 @@ export function MovieItem({ movie }) {
         // make new path/type for details
         dispatch({
             type: 'FETCH_DEETS',
-            PAYLOAD: movie.id
+            payload: movie.id
         })
         console.log("to details screen")
         // Use history.push to navigate to a new route
-        history.push('/details');
+        history.push('/details/${movie.id}');
     };
 
     return <>

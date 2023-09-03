@@ -10,7 +10,7 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
     const history = useHistory();
 
-    
+    console.log("movies: ", movies)
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });

@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 });
 
 // GET movie details by id..
-router.get('/', (req, res) => {
-  const movieData = req.params.data;
-  console.log('req.params:', req.params);
-// Query params for movies DB... need where clause!
+router.get('/:id', (req, res) => {
+  const movieID = req.params.id;
+  //console.log('req.params:', req.params);
+  // Query params for movies DB... need where clause!
   const queryText = `
       SELECT
         movies.id,
@@ -28,12 +28,9 @@ router.get('/', (req, res) => {
         movies.poster,
         movies.description
         FROM movies
-        WHERE movies.id = $1, 
-        movies.title = $2,
-        movies.poster = $3,
-        moives.description = $4`;
+        WHERE movies.id=$1`;
 
-  pool.query(queryText, [movieData])
+  pool.query(queryText, [movieID])
     .then(results => {
       console.log('server /:id GET working!', results);
       res.send(results.rows[0]);
