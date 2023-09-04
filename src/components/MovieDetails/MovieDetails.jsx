@@ -18,6 +18,7 @@ export function MovieDetails() {
   console.log("in Movie Details", details) // where are my details?
   console.log("in Movie Details/ genres", details.genres) // where are my genres?
 
+  // fix spacing issue between genres with .join(', ')!
   return (<>
     <section className="movies">
 
@@ -29,7 +30,7 @@ export function MovieDetails() {
 
           <p><b>{details.title}</b></p>
           <p>{details.description}</p>
-          <p><b>Genres: </b>{details.genres}</p>
+          <p><b>Genres: </b>{details.genres.join(', ')}</p>
         </div>
       </>
     </section>
