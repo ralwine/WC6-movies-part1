@@ -19,16 +19,22 @@ router.get('/', (req, res) => {
 // GET movie details by id..
 router.get('/:id', (req, res) => {
   const movieID = req.params.id;
-  //console.log('req.params:', req.params);
+  //console.log('req.params:', req.params.movieID);
   // Query params for movies DB... need where clause!
   const queryText = `
       SELECT
         movies.id,
         movies.title,
         movies.poster,
-        movies.description
-        FROM movies
-        WHERE movies.id=$1`;
+        movies.description,
+        array_agg(genres.name) as genres
+      FROM movies
+      JOIN movies_genres 
+      ON movies.id = movies_genres.movie_id
+      JOIN genres 
+      ON movies_genres.genre_id = genres.id
+      WHERE movies.id =$1
+      GROUP BY movies.id;`;
 
   pool.query(queryText, [movieID])
     .then(results => {

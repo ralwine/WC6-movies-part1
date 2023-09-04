@@ -16,22 +16,22 @@ export function MovieDetails() {
   };
 
   console.log("in Movie Details", details) // where are my details?
-  console.log("in Movie Details/ genres", genres.data) // where are my genres?
+  console.log("in Movie Details/ genres", details.genres) // where are my genres?
 
   return (<>
     <section className="movies">
-      
 
-        <>
-          <div key={details.id}>
-            
-            <img src={details.poster} alt={details.title} onClick={changeScreen} />
-            <p>{details.title}</p>
-            <p>{details.description}</p>
-          </div>
-        </>
-          ;
-      
+
+      <>
+        <div key={details.id}>
+
+          <img src={details.poster} alt={details.title} onClick={changeScreen} />
+
+          <p><b>{details.title}</b></p>
+          <p>{details.description}</p>
+          <p><b>Genres: </b>{details.genres}</p>
+        </div>
+      </>
     </section>
     <div>
       <button className='backToList' onClick={changeScreen}>BACK TO LIST</button>

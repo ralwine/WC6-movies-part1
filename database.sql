@@ -79,3 +79,29 @@ VALUES
 (12,6), (12,3),           -- Social Net
 (13,6), (13,10), (13,1),  -- Titanic
 (14,1), (14,2), (14,4);   -- Toy Story
+
+--Useful queries...
+-- to GET only movie details (title, poster and description) by /:id from DB
+SELECT
+        movies.id,
+        movies.title,
+        movies.poster,
+        movies.description
+        FROM movies;
+        
+SELECT * FROM movies
+JOIN movies_genres ON movies.id = movies_genres.movie_id;
+
+-- to GET movie details and genre(s) by /:id from DB
+SELECT
+        movies.id,
+        movies.title,
+        movies.poster,
+        movies.description,
+        array_agg(genres.name) as genres
+      FROM movies
+      JOIN movies_genres
+        ON movies.id = movies_genres.movie_id
+      JOIN genres
+        ON movies_genres.genre_id = genres.id
+        GROUP BY movies.id;
